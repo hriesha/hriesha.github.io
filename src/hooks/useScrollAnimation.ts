@@ -19,7 +19,7 @@ export const useScrollAnimation = ({
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once,
-    margin,
+    margin: margin as any,
   });
 
   return {
@@ -31,5 +31,5 @@ export const useScrollAnimation = ({
       delay,
       ease: 'easeOut',
     },
-  };
+  } as const;
 };

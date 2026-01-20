@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Project } from '../../data';
+import type { Project } from '../../data';
 import styles from './ProjectCard.module.css';
 
 interface ProjectCardProps {

@@ -1,4 +1,4 @@
-import { CursorPosition } from '../hooks';
+import type { CursorPosition } from '../hooks';
 
 export interface Rotation {
   x: number; // degrees

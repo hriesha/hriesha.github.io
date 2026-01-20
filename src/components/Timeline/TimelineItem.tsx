@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { TimelineEntry, formatDateRange } from '../../data';
+import type { TimelineEntry } from '../../data';
+import { formatDateRange } from '../../data';
 import styles from './TimelineItem.module.css';
 
 interface TimelineItemProps {
