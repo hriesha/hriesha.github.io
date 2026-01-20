@@ -1,0 +1,100 @@
+.floatingNav {
+  position: fixed;
+  right: var(--spacing-md);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: var(--z-fixed);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.navDot {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.navDot:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-8px);
+}
+
+.dot {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-grey);
+  border: 2px solid var(--color-background);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.navDot:hover .dot {
+  transform: scale(1.2);
+  background: var(--color-secondary);
+}
+
+.navDot.active .dot {
+  width: 16px;
+  height: 16px;
+  background: var(--color-secondary);
+  box-shadow: 0 0 0 4px rgba(78, 205, 196, 0.2);
+}
+
+.tooltip {
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--color-surface);
+  color: var(--color-text);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-fast);
+  margin-right: var(--spacing-sm);
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .floatingNav {
+    right: var(--spacing-sm);
+    gap: var(--spacing-xs);
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .navDot.active .dot {
+    width: 14px;
+    height: 14px;
+  }
+
+  .tooltip {
+    display: none; /* Hide tooltips on mobile */
+  }
+}
+
+/* Accessibility */
+.navDot:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 4px;
+  border-radius: 50%;
+}
