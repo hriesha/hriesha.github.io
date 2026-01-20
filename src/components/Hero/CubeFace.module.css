@@ -1,0 +1,29 @@
+.cubeFace {
+  position: absolute;
+  backface-visibility: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.faceImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Optional: Add subtle backdrop filter effect */
+.cubeFace::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  pointer-events: none;
+}
