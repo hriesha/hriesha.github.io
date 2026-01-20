@@ -1,73 +1,118 @@
-# React + TypeScript + Vite
+# Hriesha Popat - Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimalistic, interactive personal portfolio website showcasing my work in data science, quantitative research, and software engineering.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Interactive 3D Cube
+- Pure CSS 3D transforms (no Three.js/WebGL)
+- Cursor-responsive rotation with math-driven 2D transforms
+- Displays hiking photos on each face
+- Automatic reduced-motion fallback for accessibility
 
-## React Compiler
+### Dynamic Favicon
+- Real-time favicon updates based on cube rotation
+- Canvas-based image generation
+- Shows mini version of currently visible cube face
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Smart Dark Mode
+- Respects system color scheme preferences
+- Persists user choice in localStorage
+- Smooth theme transitions with CSS variables
 
-## Expanding the ESLint configuration
+### Smooth Scroll Animations
+- Framer Motion integration
+- Intersection Observer for performance
+- Full reduced-motion accessibility support
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Floating Navigation
+- Auto-hide/show based on scroll position
+- Active section detection
+- Keyboard accessible with ARIA labels
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Sections
+1. **Hero** - Interactive cube with intro
+2. **Projects** - Grid of 2 real + 4 placeholder projects
+3. **Timeline** - Work experience & research (newest first)
+4. **Contact** - Email, phone, LinkedIn, GitHub links
+5. **Dev Notes** - Technical features showcase
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **Framework**: React 18 + TypeScript
+- **Build Tool**: Vite
+- **Animations**: Framer Motion
+- **Styling**: CSS Modules + CSS Variables
+- **Typography**: Raleway (body) + Space Grotesk (headings)
+- **Deployment**: GitHub Pages
+
+## Color Palette
+
+- Butter Yellow: `#FFE66D`
+- Bright Blue: `#4ECDC4`
+- Grey: `#95A3B3`
+- Dark Grey: `#2D3142`
+
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Deployment
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+The site automatically deploys to GitHub Pages when you push to the `main` branch.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Setup GitHub Pages
+1. Go to repository Settings > Pages
+2. Source: GitHub Actions
+3. The workflow will automatically build and deploy
+
+## Project Structure
+
 ```
+src/
+├── components/       # React components
+│   ├── Hero/        # Interactive cube & hero section
+│   ├── Projects/    # Project grid & cards
+│   ├── Timeline/    # Experience timeline
+│   ├── Contact/     # Contact section
+│   ├── DevNotes/    # Technical features showcase
+│   ├── Navigation/  # Floating navigation
+│   └── common/      # Dark mode toggle
+├── hooks/           # Custom React hooks
+├── utils/           # Utility functions
+├── data/            # Content data
+└── styles/          # Global styles & theme
+```
+
+## Atomic Git Commits
+
+This project follows atomic commit practices - each commit represents a single logical change:
+- One feature/fix per commit
+- Clear, descriptive messages
+- Easy to review and revert
+
+## TODO
+
+- [ ] Add real GitHub URLs for projects
+- [ ] Replace placeholder images with actual hiking photos
+- [ ] Add HeartBeats GitHub repository link
+
+## License
+
+MIT
+
+---
+
+Made with ♥ by Hriesha Popat
