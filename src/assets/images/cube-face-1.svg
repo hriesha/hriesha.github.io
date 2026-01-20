@@ -1,0 +1,6 @@
+<svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="300" fill="#ddd"/>
+  <text x="150" y="150" text-anchor="middle" dy=".3em" font-family="Arial" font-size="24" fill="#666">
+    Hiking Photo 1
+  </text>
+</svg>
