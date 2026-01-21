@@ -7,23 +7,32 @@
   --font-body: 'Raleway', sans-serif;
   --font-heading: 'Space Grotesk', sans-serif;
 
-  /* Color Palette */
-  --color-butter-yellow: #FFE66D;
-  --color-bright-blue: #4ECDC4;
-  --color-grey: #95A3B3;
-  --color-dark-grey: #2D3142;
-  --color-white: #FFFFFF;
-  --color-black: #0A0A0A;
+  /* Color Palette - Loginord Inspired */
+  --color-dark-brown: #1c1817;
+  --color-warm-dark: #363130;
+  --color-medium-warm: #5e5755;
+  --color-warm-grey: #867c79;
+  --color-light-warm: #b6b0af;
+  --color-cream: #e7e5e4;
+  --color-light-cream: #f3f2f2;
+  --color-white: #ffffff;
+
+  /* Orange Accent Scale */
+  --color-orange-primary: #f94006;
+  --color-orange-light: #fa6638;
+  --color-orange-lighter: #fb8c6a;
+  --color-orange-lightest: #fee5dc;
+  --color-orange-dark: #c73305;
 
   /* Semantic Tokens - Light Mode */
   --color-background: var(--color-white);
-  --color-text: var(--color-dark-grey);
-  --color-text-secondary: var(--color-grey);
-  --color-primary: var(--color-butter-yellow);
-  --color-secondary: var(--color-bright-blue);
-  --color-accent: var(--color-grey);
-  --color-surface: #F8F9FA;
-  --color-border: #E0E0E0;
+  --color-text: var(--color-dark-brown);
+  --color-text-secondary: var(--color-warm-grey);
+  --color-primary: var(--color-orange-primary);
+  --color-secondary: var(--color-orange-light);
+  --color-accent: var(--color-warm-grey);
+  --color-surface: var(--color-light-cream);
+  --color-border: var(--color-cream);
 
   /* Spacing Scale */
   --spacing-xs: 0.5rem;    /* 8px */
@@ -83,11 +92,11 @@
 
 /* Dark Mode */
 [data-theme="dark"] {
-  --color-background: #1a1a2e;
-  --color-text: #eaeaea;
-  --color-text-secondary: #a0a0a0;
-  --color-surface: #252540;
-  --color-border: #3a3a5a;
+  --color-background: var(--color-dark-brown);
+  --color-text: var(--color-light-cream);
+  --color-text-secondary: var(--color-light-warm);
+  --color-surface: var(--color-warm-dark);
+  --color-border: var(--color-medium-warm);
 
   /* Adjust shadows for dark mode */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
@@ -208,13 +217,13 @@ button:focus-visible {
 
 /* Selection Styling */
 ::selection {
-  background-color: var(--color-primary);
-  color: var(--color-dark-grey);
+  background-color: var(--color-orange-lightest);
+  color: var(--color-dark-brown);
 }
 
 ::-moz-selection {
-  background-color: var(--color-primary);
-  color: var(--color-dark-grey);
+  background-color: var(--color-orange-lightest);
+  color: var(--color-dark-brown);
 }
 
 /* Scrollbar Styling (Webkit) */

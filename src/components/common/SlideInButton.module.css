@@ -1,0 +1,72 @@
+.slideButton {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  font-family: var(--font-heading);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-white);
+  background: transparent;
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color var(--transition-medium);
+}
+
+.slideButton:hover {
+  border-color: var(--color-secondary);
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-secondary) 100%
+  );
+  transform-origin: left;
+  z-index: -1;
+}
+
+.text {
+  position: relative;
+  z-index: 1;
+  color: var(--color-white);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.arrow {
+  position: relative;
+  z-index: 1;
+  color: var(--color-white);
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.3));
+}
+
+.slideButton:hover .arrow {
+  animation: slideArrow 0.8s ease-in-out infinite;
+}
+
+@keyframes slideArrow {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .slideButton {
+  border-color: var(--color-primary);
+}
+
+[data-theme="dark"] .slideButton:hover {
+  border-color: var(--color-orange-lighter);
+}

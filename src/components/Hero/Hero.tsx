@@ -1,36 +1,37 @@
-import React from 'react';
-import { InteractiveCube } from './InteractiveCube';
+import React, { useState } from 'react';
+import { TypewriterText, SlideInButton } from '../common';
 import styles from './Hero.module.css';
 
 export const Hero: React.FC = () => {
+  const [showButton, setShowButton] = useState(false);
+
+  const handleTypewriterComplete = () => {
+    setShowButton(true);
+  };
+
+  const handleExploreClick = () => {
+    const timelineSection = document.getElementById('timeline');
+    timelineSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section id="hero" className={styles.hero}>
       <div className={styles.content}>
-        <h1 className={styles.title}>Hriesha Popat</h1>
-        <p className={styles.subtitle}>
-          Data Scientist | Quantitative Researcher | Software Engineer
-        </p>
-        <p className={styles.description}>
-          Building intelligent systems at the intersection of machine learning, finance, and software engineering.
-        </p>
-      </div>
+        <h1 className={styles.title}>
+          <TypewriterText
+            text="Hi, I'm Hriesha Popat."
+            speed={80}
+            onComplete={handleTypewriterComplete}
+          />
+        </h1>
 
-      <InteractiveCube size={300} />
-
-      <div className={styles.scrollIndicator}>
-        <span>Scroll to explore</span>
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
+        {showButton && (
+          <div className={styles.buttonContainer}>
+            <SlideInButton onClick={handleExploreClick} delay={0.3}>
+              here's more
+            </SlideInButton>
+          </div>
+        )}
       </div>
     </section>
   );
