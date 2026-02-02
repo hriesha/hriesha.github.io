@@ -3,7 +3,6 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import clsx from 'clsx'
-import styles from './FloatingPhotoPane.module.css'
 
 const photos: string[] = [
   '/photos/IMG_8951.jpeg',
@@ -12,50 +11,48 @@ const photos: string[] = [
 ]
 
 export default function FloatingPhotoPane() {
-  const [isHovered, setIsHovered] = useState(false)
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const [openImage, setOpenImage] = useState<string | null>(null)
+
+  const isHovered = hoveredIndex !== null
 
   // Triple the photos for seamless infinite loop
   const tripleItems = [...photos, ...photos, ...photos]
 
   return (
     <>
+      <style jsx>{`
+        @keyframes scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-33.333%); }
+        }
+        .carousel {
+          animation: scroll 28s linear infinite;
+        }
+        .carousel.paused {
+          animation-play-state: paused;
+        }
+      `}</style>
+
       <div className="relative mt-12 -mx-6 md:-mx-8 overflow-hidden">
-        <div
-          className={clsx(
-            styles.carousel,
-            'flex gap-6 w-max',
-            isHovered && styles.paused
-          )}
-        >
+        <div className={`carousel flex gap-6 ${isHovered ? 'paused' : ''}`}>
           {tripleItems.map((src, i) => (
             <motion.div
               key={i}
               className={clsx(
-                'relative flex-shrink-0 h-64 w-72 md:h-80 md:w-96 overflow-hidden rounded-xl transition-all duration-500 cursor-pointer',
+                'relative flex-shrink-0 h-64 w-72 md:h-80 md:w-96 overflow-hidden rounded-xl cursor-pointer',
                 'bg-muted/20',
-                isHovered && hoveredIndex === i ? 'blur-0' : isHovered ? 'blur-[2px]' : 'blur-[3px]',
                 hoveredIndex === i && 'z-10 shadow-2xl'
               )}
               style={{
-                opacity: isHovered ? (hoveredIndex === i ? 0.95 : 0.4) : 0.35,
+                filter: isHovered && hoveredIndex === i ? 'blur(0px)' : isHovered ? 'blur(1px)' : 'blur(2px)',
+                opacity: isHovered ? (hoveredIndex === i ? 0.95 : 0.5) : 0.6,
+                transition: 'filter 0.3s, opacity 0.3s, transform 0.2s',
               }}
-              onMouseEnter={() => {
-                setIsHovered(true)
-                setHoveredIndex(i)
-              }}
-              onMouseLeave={() => {
-                setIsHovered(false)
-                setHoveredIndex(null)
-              }}
+              onMouseEnter={() => setHoveredIndex(i)}
+              onMouseLeave={() => setHoveredIndex(null)}
               onClick={() => setOpenImage(src)}
-              animate={
-                hoveredIndex === i
-                  ? { scale: 1.03 }
-                  : { scale: 1 }
-              }
-              transition={{ duration: 0.2 }}
+              whileHover={{ scale: 1.03 }}
             >
               <img
                 src={src}

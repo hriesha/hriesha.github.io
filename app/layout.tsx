@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { JetBrains_Mono } from 'next/font/google'
 import { ThemeProvider } from '@/components/ThemeProvider'
+import { AudioProvider } from '@/components/AudioProvider'
 import Nav from '@/components/Nav'
 import './globals.css'
 
@@ -28,10 +29,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Nav />
-          <main className="mx-auto max-w-2xl px-6 py-12 md:px-8 md:py-16">
-            {children}
-          </main>
+          <AudioProvider>
+            <Nav />
+            <main className="mx-auto max-w-2xl px-6 py-12 md:px-8 md:py-16">
+              {children}
+            </main>
+          </AudioProvider>
         </ThemeProvider>
       </body>
     </html>
