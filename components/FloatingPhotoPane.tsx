@@ -1,8 +1,9 @@
 'use client'
 
-import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import clsx from 'clsx'
+import styles from './FloatingPhotoPane.module.css'
 
 const photos: string[] = [
   '/photos/IMG_8951.jpeg',
@@ -14,37 +15,21 @@ export default function FloatingPhotoPane() {
   const [isHovered, setIsHovered] = useState(false)
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const [openImage, setOpenImage] = useState<string | null>(null)
-  const shouldReduceMotion = useReducedMotion()
 
-  // Duplicate for seamless loop
-  const duplicatedItems = [...photos, ...photos]
+  // Triple the photos for seamless infinite loop
+  const tripleItems = [...photos, ...photos, ...photos]
 
   return (
     <>
-      <div
-        className="relative mt-12 -mx-6 md:-mx-8 overflow-hidden"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => {
-          setIsHovered(false)
-          setHoveredIndex(null)
-        }}
-      >
-        <motion.div
-          className="flex gap-6"
-          animate={
-            shouldReduceMotion || isHovered
-              ? { x: 0 }
-              : { x: ['0%', '-50%'] }
-          }
-          transition={{
-            x: {
-              duration: 18,
-              ease: 'linear',
-              repeat: Infinity,
-            },
-          }}
+      <div className="relative mt-12 -mx-6 md:-mx-8 overflow-hidden">
+        <div
+          className={clsx(
+            styles.carousel,
+            'flex gap-6 w-max',
+            isHovered && styles.paused
+          )}
         >
-          {duplicatedItems.map((src, i) => (
+          {tripleItems.map((src, i) => (
             <motion.div
               key={i}
               className={clsx(
@@ -56,8 +41,14 @@ export default function FloatingPhotoPane() {
               style={{
                 opacity: isHovered ? (hoveredIndex === i ? 0.95 : 0.4) : 0.35,
               }}
-              onMouseEnter={() => setHoveredIndex(i)}
-              onMouseLeave={() => setHoveredIndex(null)}
+              onMouseEnter={() => {
+                setIsHovered(true)
+                setHoveredIndex(i)
+              }}
+              onMouseLeave={() => {
+                setIsHovered(false)
+                setHoveredIndex(null)
+              }}
               onClick={() => setOpenImage(src)}
               animate={
                 hoveredIndex === i
@@ -73,7 +64,7 @@ export default function FloatingPhotoPane() {
               />
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
 
       {/* Lightbox */}
