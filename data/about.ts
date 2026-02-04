@@ -7,9 +7,9 @@ export const aboutContent = {
     `I’ve built systems projects such as IT-Mobile, an offline, Raspberry Pi–powered Wi-Fi diagnostics tool with speech accessibility, and I’ve won awards at CalHacks and DubHacks, alongside participating in other hackathons. I’ve also worked on drug discrepancy research, applying clustering and statistical analysis to identify patterns in adverse event data, as well as an observatory-style scoliosis research project during high school. Alongside this work, I’m a teaching assistant. I grew up in Mumbai and am now in Seattle studying computer science, data science, and computational finance at the University of Washington.`,
   ],
   links: [
-    { label: 'Email', href: 'mailto:hi@example.com' },
+    { label: 'Email', href: 'mailto:hriesha.p@gmail.com' },
     { label: 'LinkedIn', href: 'https://linkedin.com' },
-    { label: 'GitHub', href: 'https://github.com' },
+    { label: 'GitHub', href: 'https://github.com/hriesha' },
     { label: 'X', href: 'https://x.com/hriesha_p'},
       
   ],
