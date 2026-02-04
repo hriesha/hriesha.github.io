@@ -8,7 +8,7 @@ export const aboutContent = {
   ],
   links: [
     { label: 'Email', href: 'mailto:hriesha.p@gmail.com' },
-    { label: 'LinkedIn', href: 'https://linkedin.com' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/hrieshapopat' },
     { label: 'GitHub', href: 'https://github.com/hriesha' },
     { label: 'X', href: 'https://x.com/hriesha_p'},
       
