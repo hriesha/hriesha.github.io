@@ -22,6 +22,19 @@ function highlightText(text: string) {
       (word) => word.toLowerCase() === part.toLowerCase()
     )
     if (isHighlight) {
+      if (part.toLowerCase() === 'heartbeats') {
+        return (
+          <a
+            key={i}
+            href="https://heartbeatswaitlist.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-blue-100 dark:bg-blue-900/40 px-1 rounded hover:underline hover:underline-offset-4"
+          >
+            {part}
+          </a>
+        )
+      }
       return (
         <span key={i} className="bg-blue-100 dark:bg-blue-900/40 px-1 rounded">
           {part}

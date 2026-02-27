@@ -12,6 +12,7 @@ export const workEntries: WorkEntry[] = [
     title: 'HeartBeats',
     year: '2025–present',
     description: 'BPM-synced music adapting to heart rate/pace for optimised performance',
+    link: 'https://heartbeatswaitlist.vercel.app',
   },
   {
     id: '2',
