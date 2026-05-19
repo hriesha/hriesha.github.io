@@ -90,9 +90,7 @@ export default function FloatingPhotoPane() {
       <motion.div
         ref={trackRef}
         className="relative mt-12 -mx-6 md:-mx-8"
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4 }}
+        initial={false}
       >
         <button
           type="button"
