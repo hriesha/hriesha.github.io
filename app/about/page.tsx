@@ -5,6 +5,7 @@ import FloatingPhotoPane from '@/components/FloatingPhotoPane'
 import Wave from '@/components/Wave'
 
 const highlightWords = [
+  'LARCH Lab',
   'HeartBeats',
   'quantitative research intern',
   'IT-Mobile',
@@ -22,6 +23,19 @@ function highlightText(text: string) {
       (word) => word.toLowerCase() === part.toLowerCase()
     )
     if (isHighlight) {
+      if (part.toLowerCase() === 'larch lab') {
+        return (
+          <a
+            key={i}
+            href="https://larchlab.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-blue-100 dark:bg-blue-900/40 px-1 rounded hover:underline hover:underline-offset-4"
+          >
+            {part}
+          </a>
+        )
+      }
       if (part.toLowerCase() === 'heartbeats') {
         return (
           <a
