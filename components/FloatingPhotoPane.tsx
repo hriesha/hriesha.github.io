@@ -5,9 +5,10 @@ import { useState } from 'react'
 import clsx from 'clsx'
 
 const photos: string[] = [
-  '/photos/IMG_8951.jpeg',
-  '/photos/IMG_8033.jpeg',
-  '/photos/IMG_7983.jpeg',
+  '/photos/heartbeats-showcase.png',
+  '/photos/presentation.png',
+  '/photos/railroad.png',
+  '/photos/driving.png',
 ]
 
 export default function FloatingPhotoPane() {
@@ -27,7 +28,7 @@ export default function FloatingPhotoPane() {
           100% { transform: translateX(-33.333%); }
         }
         .carousel {
-          animation: scroll 28s linear infinite;
+          animation: scroll 16s linear infinite;
         }
         .carousel.paused {
           animation-play-state: paused;
