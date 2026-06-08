@@ -10,13 +10,13 @@ export const workEntries: WorkEntry[] = [
   {
     id: '0a',
     title: 'Two Ravens VC',
-    year: 'Apr. 2026–present',
+    year: '2026–present',
     description: 'Building AI-driven research systems and workflow pipelines to automate startup sourcing, diligence, and portfolio operations',
   },
   {
     id: '0b',
     title: 'Zolve',
-    year: 'June 2026–present',
+    year: '2026–present',
     description: 'AI and ML Engineering Intern — building AI-powered analytics and agentic tooling to automate financial operations across lending products',
   },
   {
