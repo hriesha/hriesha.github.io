@@ -20,6 +20,12 @@ export const workEntries: WorkEntry[] = [
     description: 'AI and ML Engineering Intern — building AI-powered analytics and agentic tooling to automate financial operations across lending products',
   },
   {
+    id: '0c',
+    title: 'NLP Research',
+    year: '2026–present',
+    description: 'Benchmarking prompting strategies (Chain-of-Thought, Self-Consistency, Program of Thought, Tree of Thought) for LLM text classification on rule-based legal corpora — evaluating accuracy tradeoffs across model scales using annotated NDA and CUAD commercial contract datasets',
+  },
+  {
     id: '1',
     title: 'LARCH Lab',
     year: '2026–present',

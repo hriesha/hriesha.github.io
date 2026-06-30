@@ -7,6 +7,7 @@ export const aboutContent = {
     `I’ve built systems projects such as IT-Mobile, an offline, Raspberry Pi–powered Wi-Fi diagnostics tool with speech accessibility, and I’ve won awards at CalHacks and DubHacks, alongside participating in other hackathons. Alongside this work, I’m a teaching assistant.`,
     `I’m with the LARCH Lab at the UW iSchool, designing and evaluating AI-driven language technologies that improve accessibility and comprehension in healthcare, science communication, and enterprise systems.`,
     `My work there spans NLP, generative AI, and human-AI collaboration—studying system performance, usability tradeoffs, and how research insights translate into practical, user-centered tools.`,
+    `I’m also working with a UW professor benchmarking LLM prompting strategies — Chain-of-Thought, Self-Consistency, Program of Thought, and Tree of Thought — for text classification on rule-based legal corpora, studying how accuracy scales with model size across annotated NDA and CUAD commercial contract datasets.`,
     `I’ve also worked on drug discrepancy research, applying clustering and statistical analysis to identify patterns in adverse event data, as well as an observatory-style scoliosis research project during high school. I grew up in Mumbai and am now in Seattle studying computer science, data science, and computational finance at the University of Washington.`,
   ],
   links: [
