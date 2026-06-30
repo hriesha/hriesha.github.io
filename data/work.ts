@@ -10,25 +10,27 @@ export const workEntries: WorkEntry[] = [
   {
     id: '0a',
     title: 'Two Ravens VC',
-    year: '2026–present',
+    year: '2026',
     description: 'Building AI-driven research systems and workflow pipelines to automate startup sourcing, diligence, and portfolio operations',
+    link: 'https://www.tworavens.vc',
   },
   {
     id: '0b',
     title: 'Zolve',
-    year: '2026–present',
+    year: '2026',
     description: 'AI and ML Engineering Intern — building AI-powered analytics and agentic tooling to automate financial operations across lending products',
+    link: 'https://zolve.com',
   },
   {
     id: '0c',
     title: 'NLP Research',
-    year: '2026–present',
-    description: 'Benchmarking prompting strategies (Chain-of-Thought, Self-Consistency, Program of Thought, Tree of Thought) for LLM text classification on rule-based legal corpora — evaluating accuracy tradeoffs across model scales using annotated NDA and CUAD commercial contract datasets',
+    year: '2026',
+    description: 'Evaluating LLM prompting strategies (CoT, Tree of Thought, Program of Thought) for text classification on legal document corpora — benchmarking accuracy across model scales',
   },
   {
     id: '1',
     title: 'LARCH Lab',
-    year: '2026–present',
+    year: '2026',
     description:
       'Designing and evaluating accessible AI language systems for healthcare, science, and enterprise',
     link: 'https://larchlab.org',
@@ -36,7 +38,7 @@ export const workEntries: WorkEntry[] = [
   {
     id: '2',
     title: 'HeartBeats',
-    year: '2025–present',
+    year: '2025–2026',
     description: 'BPM-synced music adapting to heart rate/pace for optimised performance',
     link: 'https://heartbeatswaitlist.vercel.app',
   },
@@ -56,6 +58,7 @@ export const workEntries: WorkEntry[] = [
     id: '5',
     title: 'QiCap.ai',
     description: 'ML-based alpha research + strategies for Indian equities',
+    link: 'https://qicap.ai/home',
     year: '2025',
   },
   {
