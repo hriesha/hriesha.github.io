@@ -36,6 +36,14 @@ export const workEntries: WorkEntry[] = [
     link: 'https://larchlab.org',
   },
   {
+    id: '1a',
+    title: 'Shop AgentReady',
+    year: '2026',
+    description:
+      'Audits ecommerce catalogs for AI shopping agent readiness — scores product data against a weighted attribute rubric, simulates agent queries, and ranks the gaps suppressing visibility',
+    link: 'https://shopagentready.vercel.app',
+  },
+  {
     id: '2',
     title: 'HeartBeats',
     year: '2025–2026',
@@ -59,12 +67,6 @@ export const workEntries: WorkEntry[] = [
     title: 'QiCap.ai',
     description: 'ML-based alpha research + strategies for Indian equities',
     link: 'https://qicap.ai/home',
-    year: '2025',
-  },
-  {
-    id: '6',
-    title: 'F1 Qualifying Predictor',
-    description: 'ML predictor for qualifying order',
     year: '2025',
   },
   {
