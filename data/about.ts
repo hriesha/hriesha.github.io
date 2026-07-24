@@ -2,13 +2,10 @@
 export const aboutContent = {
   heading: 'About',
   paragraphs: [
-    `I’m building HeartBeats, a system that syncs music playback to heart rate and running pace to reduce interruptions during workouts.`,
-    `Previously, I worked as a quantitative research intern at QiCap, where I built machine-learning-based alpha signals and intraday trading strategies for Indian equities, with an emphasis on signal stability and feature standardization across contracts.`,
-    `I’ve built systems projects such as IT-Mobile, an offline, Raspberry Pi–powered Wi-Fi diagnostics tool with speech accessibility, and I’ve won awards at CalHacks and DubHacks, alongside participating in other hackathons. Alongside this work, I’m a teaching assistant.`,
-    `I’m with the LARCH Lab at the UW iSchool, designing and evaluating AI-driven language technologies that improve accessibility and comprehension in healthcare, science communication, and enterprise systems.`,
-    `My work there spans NLP, generative AI, and human-AI collaboration—studying system performance, usability tradeoffs, and how research insights translate into practical, user-centered tools.`,
-    `I’m also working with a UW professor benchmarking LLM prompting strategies — Chain-of-Thought, Self-Consistency, Program of Thought, and Tree of Thought — for text classification on rule-based legal corpora, studying how accuracy scales with model size across annotated NDA and CUAD commercial contract datasets.`,
-    `I’ve also worked on drug discrepancy research, applying clustering and statistical analysis to identify patterns in adverse event data, as well as an observatory-style scoliosis research project during high school. I grew up in Mumbai and am now in Seattle studying computer science, data science, and computational finance at the University of Washington.`,
+    `I work on risk and analytics at Zolve, a fintech serving international students, where most of my time goes into what things cost us, whether we should be buying them at all, and what a wrong call is worth. The questions that sit just before the modeling tend to be the ones I care about — who this is for, what it replaces, whether it’s worth building. I’m also at Two Ravens, a pre-seed venture firm, rebuilding how they track what they know so the connections between companies are findable.`,
+    `I research with the LARCH Lab at the UW iSchool on accessibility in language technologies, currently on remediating documents existing tools can’t handle. I also TA databases and data structures, which is where I’ve learned the most about explaining technical work to people seeing it for the first time.`,
+    `The most recent thing I’ve built is AgentReady, which audits e-commerce catalogs for how well AI shopping agents can read them. Before that I did quantitative research at QiCap on Indian equities, building signals and a mean-reversion engine around a divergence I’d spotted in the market. Earlier projects include HeartBeats and IT-Mobile, an offline Wi-Fi diagnostics tool with speech accessibility that won awards at CalHacks and DubHacks.`,
+    `I grew up in Mumbai and am now in Seattle studying data science with a minor in computational finance at the University of Washington.`,
   ],
   links: [
     { label: 'Email', href: 'mailto:hriesha.p@gmail.com' },

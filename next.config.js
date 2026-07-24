@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  // Emit work/index.html rather than work.html so /work/ resolves on GitHub Pages
+  trailingSlash: true,
   images: {
     unoptimized: true,
   },

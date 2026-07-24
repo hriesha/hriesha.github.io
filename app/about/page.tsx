@@ -4,55 +4,38 @@ import { aboutContent } from '@/data/about'
 import FloatingPhotoPane from '@/components/FloatingPhotoPane'
 import Wave from '@/components/Wave'
 
-const highlightWords = [
-  'LARCH Lab',
-  'HeartBeats',
-  'quantitative research intern',
-  'IT-Mobile',
-  'hackathons',
-  'research',
-  'teaching',
-]
+// Terms highlighted in the About copy, each linking out to the thing it names.
+// Longest first so a shorter term never swallows part of a longer one.
+const highlightLinks: Record<string, string> = {
+  'University of Washington': 'https://www.washington.edu',
+  'AgentReady': 'https://shopagentready.vercel.app',
+  'HeartBeats': 'https://heartbeatswaitlist.vercel.app',
+  'Two Ravens': 'https://www.tworavens.vc',
+  'IT-Mobile': 'https://github.com/hriesha/IT-Mobile',
+  'LARCH Lab': 'https://larchlab.org',
+  'QiCap': 'https://qicap.ai/home',
+  'Zolve': 'https://zolve.com',
+}
 
 function highlightText(text: string) {
-  const regex = new RegExp(`(${highlightWords.join('|')})`, 'gi')
+  const regex = new RegExp(`(${Object.keys(highlightLinks).join('|')})`, 'gi')
   const parts = text.split(regex)
 
   return parts.map((part, i) => {
-    const isHighlight = highlightWords.some(
+    const term = Object.keys(highlightLinks).find(
       (word) => word.toLowerCase() === part.toLowerCase()
     )
-    if (isHighlight) {
-      if (part.toLowerCase() === 'larch lab') {
-        return (
-          <a
-            key={i}
-            href="https://larchlab.org"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-blue-100 dark:bg-blue-900/40 px-1 rounded hover:underline hover:underline-offset-4"
-          >
-            {part}
-          </a>
-        )
-      }
-      if (part.toLowerCase() === 'heartbeats') {
-        return (
-          <a
-            key={i}
-            href="https://heartbeatswaitlist.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-blue-100 dark:bg-blue-900/40 px-1 rounded hover:underline hover:underline-offset-4"
-          >
-            {part}
-          </a>
-        )
-      }
+    if (term) {
       return (
-        <span key={i} className="bg-blue-100 dark:bg-blue-900/40 px-1 rounded">
+        <a
+          key={i}
+          href={highlightLinks[term]}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-blue-100 dark:bg-blue-900/40 px-1 rounded hover:underline hover:underline-offset-4"
+        >
           {part}
-        </span>
+        </a>
       )
     }
     return part
