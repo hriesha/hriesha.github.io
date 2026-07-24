@@ -13,6 +13,7 @@ const highlightLinks: Record<string, string> = {
   'Two Ravens': 'https://www.tworavens.vc',
   'IT-Mobile': 'https://github.com/hriesha/IT-Mobile',
   'LARCH Lab': 'https://larchlab.org',
+  'QiCap.AI': 'https://qicap.ai/home',
   'QiCap': 'https://qicap.ai/home',
   'Zolve': 'https://zolve.com',
 }
