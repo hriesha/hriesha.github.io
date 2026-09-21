@@ -8,6 +8,13 @@ export interface WorkEntry {
 
 export const workEntries: WorkEntry[] = [
   {
+    id: '00',
+    title: 'DubHacks NEXT',
+    year: '2026',
+    description: "Director of Technology on the exec board of the PNW's competitive startup incubator for early founders.",
+    link: 'https://dubhacks.co/next',
+  },
+  {
     id: '0a',
     title: 'Two Ravens VC',
     year: '2026',
@@ -49,12 +56,6 @@ export const workEntries: WorkEntry[] = [
     year: '2025–2026',
     description: 'BPM-synced music adapting to heart rate/pace for optimised performance',
     link: 'https://heartbeatswaitlist.vercel.app',
-  },
-  {
-    id: '3',
-    title: 'DubHacks NEXT',
-    description: 'Competitive startup incubator program in the PNW for early-stage cracked founders · ~2 YC companies per batch',
-    year: '2026',
   },
   {
     id: '4',

@@ -7,6 +7,7 @@ import Wave from '@/components/Wave'
 // Terms highlighted in the About copy, each linking out to the thing it names.
 // Longest first so a shorter term never swallows part of a longer one.
 const highlightLinks: Record<string, string> = {
+  'DubHacks NEXT': 'https://dubhacks.co/next',
   'AgentReady': 'https://shopagentready.vercel.app',
   'HeartBeats': 'https://heartbeatswaitlist.vercel.app',
   'Two Ravens': 'https://www.tworavens.vc',
