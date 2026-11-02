@@ -474,3 +474,82 @@ html.dark {
     transition: none;
   }
 }
+
+/* ---- the trail loader on the hikes page ---- */
+
+.hike-loader {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: var(--muted);
+}
+
+.hike-loader svg {
+  width: 56%;
+  max-width: 120px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  overflow: visible;
+}
+
+.hike-loader span {
+  font-size: 10px;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.hike-sun {
+  fill: color-mix(in srgb, currentColor 25%, transparent);
+  animation: hike-sun 3s ease-in-out infinite;
+}
+
+.hike-snow {
+  stroke-width: 1.2;
+}
+
+.hike-trail {
+  stroke-width: 1.3;
+  stroke-dasharray: 2 3;
+  opacity: 0.7;
+  animation: hike-march 0.8s linear infinite;
+}
+
+.hike-hiker {
+  fill: currentColor;
+  stroke: none;
+  offset-rotate: 0deg;
+  animation: hike-walk 3.2s ease-in-out infinite;
+}
+
+@keyframes hike-sun {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+@keyframes hike-march {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: -5; }
+}
+
+@keyframes hike-walk {
+  0% { offset-distance: 0%; opacity: 0; }
+  8% { opacity: 1; }
+  92% { opacity: 1; }
+  100% { offset-distance: 100%; opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hike-sun,
+  .hike-trail,
+  .hike-hiker {
+    animation: none;
+  }
+  .hike-hiker { offset-distance: 60%; }
+}
