@@ -99,30 +99,6 @@ export default function HikesPage() {
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 cursor-pointer"
             onClick={close}
           >
-            <button
-              type="button"
-              aria-label="Previous photo"
-              onClick={(e) => {
-                e.stopPropagation()
-                step(-1)
-              }}
-              className="absolute left-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white/80 backdrop-blur-sm transition-colors hover:bg-white/20 hover:text-white md:left-6"
-            >
-              <Chevron dir="left" />
-            </button>
-
-            <button
-              type="button"
-              aria-label="Next photo"
-              onClick={(e) => {
-                e.stopPropagation()
-                step(1)
-              }}
-              className="absolute right-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white/80 backdrop-blur-sm transition-colors hover:bg-white/20 hover:text-white md:right-6"
-            >
-              <Chevron dir="right" />
-            </button>
-
             <span className="absolute bottom-4 left-1/2 -translate-x-1/2 text-xs text-white/60">
               {(openIndex ?? 0) + 1} / {hikePhotos.length}
             </span>
@@ -135,6 +111,30 @@ export default function HikesPage() {
               transition={{ duration: 0.2 }}
               className="relative"
             >
+              <button
+                type="button"
+                aria-label="Previous photo"
+                onClick={(e) => {
+                  e.stopPropagation()
+                  step(-1)
+                }}
+                className="absolute left-2 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white/80 backdrop-blur-sm transition-colors hover:bg-white/20 hover:text-white md:-left-14"
+              >
+                <Chevron dir="left" />
+              </button>
+
+              <button
+                type="button"
+                aria-label="Next photo"
+                onClick={(e) => {
+                  e.stopPropagation()
+                  step(1)
+                }}
+                className="absolute right-2 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white/80 backdrop-blur-sm transition-colors hover:bg-white/20 hover:text-white md:-right-14"
+              >
+                <Chevron dir="right" />
+              </button>
+
               <img
                 src={thumbOf(openImage)}
                 alt=""
