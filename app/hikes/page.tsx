@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, AnimatePresence } from 'framer-motion'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 import HikePhoto from '@/components/HikePhoto'
 
@@ -23,15 +23,42 @@ const hikePhotos: string[] = [
 
 const thumbOf = (src: string) => src.replace('/hikes/', '/hikes/thumbs/')
 
+function Chevron({ dir }: { dir: 'left' | 'right' }) {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d={dir === 'left' ? 'M15 18l-6-6 6-6' : 'M9 18l6-6-6-6'} />
+    </svg>
+  )
+}
+
 export default function HikesPage() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
-  const [openImage, setOpenImage] = useState<string | null>(null)
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
   const [fullLoaded, setFullLoaded] = useState(false)
 
-  const open = (src: string) => {
+  const open = (i: number) => {
     setFullLoaded(false)
-    setOpenImage(src)
+    setOpenIndex(i)
   }
+  const close = () => setOpenIndex(null)
+  const step = (delta: number) => {
+    setFullLoaded(false)
+    setOpenIndex((i) => (i === null ? i : (i + delta + hikePhotos.length) % hikePhotos.length))
+  }
+
+  // Arrow keys move between photos, Escape closes.
+  useEffect(() => {
+    if (openIndex === null) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowRight') step(1)
+      else if (e.key === 'ArrowLeft') step(-1)
+      else if (e.key === 'Escape') close()
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [openIndex])
+
+  const openImage = openIndex === null ? null : hikePhotos[openIndex]
 
   return (
     <div>
@@ -47,7 +74,7 @@ export default function HikesPage() {
             )}
             onMouseEnter={() => setHoveredIndex(i)}
             onMouseLeave={() => setHoveredIndex(null)}
-            onClick={() => open(src)}
+            onClick={() => open(i)}
             animate={
               hoveredIndex === i
                 ? { scale: 1.02 }
@@ -70,13 +97,42 @@ export default function HikesPage() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 cursor-pointer"
-            onClick={() => setOpenImage(null)}
+            onClick={close}
           >
+            <button
+              type="button"
+              aria-label="Previous photo"
+              onClick={(e) => {
+                e.stopPropagation()
+                step(-1)
+              }}
+              className="absolute left-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white/80 backdrop-blur-sm transition-colors hover:bg-white/20 hover:text-white md:left-6"
+            >
+              <Chevron dir="left" />
+            </button>
+
+            <button
+              type="button"
+              aria-label="Next photo"
+              onClick={(e) => {
+                e.stopPropagation()
+                step(1)
+              }}
+              className="absolute right-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white/80 backdrop-blur-sm transition-colors hover:bg-white/20 hover:text-white md:right-6"
+            >
+              <Chevron dir="right" />
+            </button>
+
+            <span className="absolute bottom-4 left-1/2 -translate-x-1/2 text-xs text-white/60">
+              {(openIndex ?? 0) + 1} / {hikePhotos.length}
+            </span>
+
             <motion.div
               key={openImage}
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
+              initial={{ opacity: 0, scale: 0.97 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
               className="relative"
             >
               <img
