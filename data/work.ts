@@ -12,7 +12,7 @@ export const workEntries: WorkEntry[] = [
     title: 'DubHacks NEXT',
     year: '2026',
     description: "Director of Technology on the exec board of the PNW's competitive startup incubator for early founders.",
-    link: 'https://dubhacks.co/next',
+    link: 'https://next.dubhacks.co',
   },
   {
     id: '0a',

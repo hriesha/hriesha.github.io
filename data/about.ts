@@ -8,7 +8,7 @@ export const aboutContent = {
     `Most recently I built AgentReady, which audits commerce catalogs for how well AI shopping agents can understand them.`,
     `Before Two Ravens I worked on risk and analytics at Zolve, a fintech serving international students, where I found we were paying a vendor to guarantee ACH transfers and built an in-house model to replace it. Earlier I did quantitative research at QiCap on Indian equities, building trading signals and a mean-reversion engine around a market divergence I identified.`,
     `Earlier projects include HeartBeats and IT-Mobile, an offline Wi-Fi diagnostics tool with speech accessibility that won awards at DubHacks.`,
-    `I grew up in Mumbai and now live in Seattle, where I study data science with a minor in computational finance at the University of Washington.`,
+    `I grew up in Mumbai and now live in Seattle, where I study honors in Data Science with a minor in computational finance at the University of Washington.`,
   ],
   links: [
     { label: 'Email', href: 'mailto:hriesha.p@gmail.com' },

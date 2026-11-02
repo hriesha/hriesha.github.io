@@ -29,7 +29,7 @@ export default function Nav() {
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm">
       <nav className="mx-auto flex max-w-2xl items-center justify-between px-6 py-4 md:px-8">
         <Link
-          href="/about"
+          href="/"
           className="text-base font-medium hover:no-underline"
         >
           Hi I'm Hriesha
