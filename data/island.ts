@@ -45,7 +45,7 @@ export const islandTiles: IslandTile[] = [
     color: '#d9748a',
     tagline: '40 founders, one incubator.',
     blurb:
-      "UW's student-run startup incubator. I'm a director on the exec team: I help lead and mentor a community of 40 founders, and connect them with the experienced founders, investors, and operators who can help turn an idea into a real company. I also built the website, end to end :)",
+      "UW's student-run startup incubator. As a director, I help lead and mentor a community of 40 founders, and connect them with the experienced founders, investors, and operators who can help turn an idea into a real company. I also built the website, end to end :)",
     icon: 'M0 -7 C4 -4 4 2 2 5 H-2 C-4 2 -4 -4 0 -7 Z M-2 5 L-4 8 M2 5 L4 8 M-1 -1 A1 1 0 1 0 1 -1 A1 1 0 1 0 -1 -1',
     link: 'https://next.dubhacks.co',
   },
