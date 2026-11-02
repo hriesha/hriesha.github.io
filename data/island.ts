@@ -135,9 +135,9 @@ export const islandTiles: IslandTile[] = [
     title: 'Teaching',
     year: 'UW',
     color: '#4f8a5b',
-    tagline: 'sql, algorithms, and why.',
+    tagline: 'sql, algorithms, charts, and why.',
     blurb:
-      'I TA databases and data structures at UW: SQL, algorithms, and the problem-solving underneath them. Explaining something is still the fastest way I know to find out whether I actually understand it.',
+      "I've TA'd databases, data structures, and data visualization and design at UW, and explored the problem-solving within each, from SQL and algorithms to visual design. Explaining something is still the fastest way I know to find out whether I actually understand it.",
     icon: 'M-8 -2 L0 -6 L8 -2 L0 2 Z M-4 0 V4 Q0 6 4 4 V0 M8 -2 V3',
   },
   {
