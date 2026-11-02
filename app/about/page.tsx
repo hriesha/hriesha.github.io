@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { aboutContent } from '@/data/about'
 import FloatingPhotoPane from '@/components/FloatingPhotoPane'
 import Wave from '@/components/Wave'
@@ -46,6 +47,14 @@ function highlightText(text: string) {
 export default function AboutPage() {
   return (
     <div>
+      <p className="mb-6 text-sm text-muted">
+        Check out the{' '}
+        <Link href="/" className="text-foreground hover:underline hover:underline-offset-4">
+          home page
+        </Link>{' '}
+        if you haven&apos;t already.
+      </p>
+
       <h1 className="text-lg font-medium">{aboutContent.heading}</h1>
 
       <div className="mt-8 max-w-prose space-y-4 text-muted">

@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 
 const navItems = [
+  { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/work', label: 'Work' },
   { href: '/hikes', label: 'Hikes' },
@@ -37,7 +38,10 @@ export default function Nav() {
 
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-4 text-sm">
-            {navItems.map((item) => (
+            {navItems
+              // the island is the home page; only offer "Home" from elsewhere
+              .filter((item) => item.href !== '/' || pathname !== '/')
+              .map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
